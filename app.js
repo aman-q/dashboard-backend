@@ -4,7 +4,7 @@ import cors from 'cors';
 import Router from './routes/router.js';
 
 const app = express();
-const PORT = proces.env.PORT || 8001
+const port = proces.env.PORT || 8001
 app.use(cors());
 app.use(express.json());
 app.use('/api/users', Router);
@@ -12,7 +12,7 @@ app.use('/api/users', Router);
 const startServer = async () => {
     await connectDB(); 
 
-    app.listen(PORT, () => {
+    app.listen(port, () => {
         console.log("Server is running on port 8001");
     });
 };
